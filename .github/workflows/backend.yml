@@ -30,9 +30,8 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build and Push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
-          context: backend
-          path: backend/Dockerfile
+          context: .
           push: true
-          tags: 615299766984.dkr.ecr.us-east-1.amazonaws.com/dev/backend:${{ github.run_number }}
+          tags: 615299766984.dkr.ecr.us-east-1.amazonaws.com/dev/backend:8
